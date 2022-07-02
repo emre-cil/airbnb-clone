@@ -23,7 +23,7 @@ const LocationSearch = () => {
         borderRadius: 20,
         ml: 15,
       }}
-      elevation={2}
+      elevation={1}
     >
       <Stack
         sx={{
@@ -48,7 +48,8 @@ const LocationSearch = () => {
               <Typography
                 sx={{
                   color: (theme) => theme.palette.text.primary,
-                  fontWeight: 'bold',
+                  fontWeight: '500',
+                  fontSize: '15px',
                 }}
               >
                 {choice.text}

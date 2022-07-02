@@ -12,7 +12,7 @@ import {
 import ProfileSettings from './ProfileSettings';
 import MobileSearch from './MobileSearch';
 
-export const Header = () => {
+const Header = () => {
   return (
     <Box
       sx={{
@@ -21,7 +21,7 @@ export const Header = () => {
         borderBottom: '1px solid #ddd',
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" disableGutters>
         <Box
           sx={{
             ...flexBetweenCenter,
@@ -46,3 +46,5 @@ export const Header = () => {
     </Box>
   );
 };
+
+export default Header;

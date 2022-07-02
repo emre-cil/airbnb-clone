@@ -7,14 +7,14 @@ import { pink } from '@mui/material/colors';
 const Logo = () => {
   return (
     <Box sx={flexCenter}>
-      <FaAirbnb size={50} color={pink[500]} />
+      <FaAirbnb size={40} color="#FF385C" />
       <Typography
         variant="h5"
         sx={{
           ml: 1,
           color: (theme) => theme.palette.secondary.main,
           fontSize: '20px',
-          fontWeight: 'bold',
+          fontWeight: '1000',
         }}
       >
         airbnb

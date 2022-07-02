@@ -5,7 +5,7 @@ export const AppThemeProvider = (props) => {
   const theme = createTheme({
     typography: {
       allVariants: {
-        fontFamily: 'Raleway',
+        fontFamily: 'Montreal',
         textTransform: 'none',
         fontSize: 15,
       },
@@ -15,7 +15,7 @@ export const AppThemeProvider = (props) => {
         main: grey[700],
       },
       secondary: {
-        main: pink[500],
+        main: '#FF385C',
       },
     },
     components: {
