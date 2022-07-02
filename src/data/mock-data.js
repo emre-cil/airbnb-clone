@@ -50,7 +50,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/4d268e76-949f-4de7-a10b-b4b48ea3355d.jpg?im_w=720',
       },
       {
         id: 2,
@@ -76,7 +76,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/765acada-1030-4bf4-908d-1c9e8f0b95bf.jpg?im_w=720',
       },
       {
         id: 2,

@@ -1,24 +1,37 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
 import { FaAirbnb } from 'react-icons/fa';
-import { flexCenter } from 'themes/commonStyles';
 const Logo = () => {
   return (
-    <Box sx={flexCenter}>
+    <Wrapper>
       <FaAirbnb size={40} color="#FF385C" />
       <Typography
         variant="h5"
+        className="logo-text"
         sx={{
           ml: 1,
-          color: (theme) => theme.palette.secondary.main,
           fontSize: '20px',
           fontWeight: '1000',
         }}
       >
         airbnb
       </Typography>
-    </Box>
+    </Wrapper>
   );
 };
 export default Logo;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .logo-text {
+    font-size: 20px;
+    font-weight: 1000;
+    color: var(--primary);
+    @media screen and (max-width: 1130px) {
+      display: none;
+    }
+  }
+`;

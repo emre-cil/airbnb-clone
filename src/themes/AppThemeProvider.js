@@ -14,9 +14,6 @@ export const AppThemeProvider = (props) => {
       primary: {
         main: grey[700],
       },
-      secondary: {
-        main: '#FF385C',
-      },
     },
     components: {
       MuiTypography: {

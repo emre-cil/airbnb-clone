@@ -1,14 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 // react icons
-import { IoSearchCircleSharp } from 'react-icons/io5';
-import { pink } from '@mui/material/colors';
+import { IoSearchCircle } from 'react-icons/io5';
 
 const choices = [
   { id: 1, text: 'Anywhere' },
@@ -18,59 +12,48 @@ const choices = [
 
 const LocationSearch = () => {
   return (
-    <Paper
-      sx={{
-        borderRadius: 20,
-        ml: 15,
-      }}
-      elevation={1}
-    >
-      <Stack
-        sx={{
-          borderRadius: 20,
-          pl: 2,
-          ':hover': {
-            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-          },
-        }}
-        divider={<Divider orientation="vertical" flexItem />}
-      >
-        {choices.map((choice) => {
-          return (
-            <Button
-              key={choice.id}
-              sx={{
-                ':hover': {
-                  backgroundColor: 'transparent',
-                },
-              }}
-            >
-              <Typography
-                sx={{
-                  color: (theme) => theme.palette.text.primary,
-                  fontWeight: '500',
-                  fontSize: '15px',
-                }}
-              >
-                {choice.text}
-              </Typography>
-              {choice.withIcon && (
-                <Box
-                  sx={{
-                    ml: 1,
-                    mt: 1,
-                    mr: 1,
-                  }}
-                >
-                  <IoSearchCircleSharp color={pink[500]} size={32} />
-                </Box>
-              )}
-            </Button>
-          );
-        })}
-      </Stack>
-    </Paper>
+    <Wrapper>
+      {choices.map((choice) => {
+        return (
+          <Choice key={choice.id} id={choice.id}>
+            <ChoiceText id={choice.id}>{choice.text}</ChoiceText>
+            {!choice.withIcon && <Divider></Divider>}
+            {choice.withIcon && <IoSearchCircle color="#FF385C" size={43} />}
+          </Choice>
+        );
+      })}
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  cursor: pointer;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  svg {
+    margin-right: 2px;
+  }
+`;
+const Choice = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: ${(props) => (props.id === 1 ? '8px' : '0px')};
+`;
+const ChoiceText = styled.div`
+  padding: 0 1rem;
+  font-size: 14px;
+  padding-right: ${(props) => props.id === 3 && '11px'};
+  font-weight: ${(props) => (props.id === 3 ? 'normal' : `bold`)};
+  color: ${(props) => (props.id === 3 ? '#717171' : '#222222')};
+`;
+const Divider = styled.span`
+  border-left: 1px solid var(--medGrey);
+
+  height: 24px;
+`;
 export default LocationSearch;
