@@ -1,13 +1,13 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { grey, pink } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 export const AppThemeProvider = (props) => {
   const theme = createTheme({
     typography: {
       allVariants: {
-        fontFamily: 'Montreal',
         textTransform: 'none',
         fontSize: 15,
+        fontFamily: 'Poppins',
       },
     },
     palette: {

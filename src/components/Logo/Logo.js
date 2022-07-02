@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { FaAirbnb } from 'react-icons/fa';
 import { flexCenter } from 'themes/commonStyles';
-import { pink } from '@mui/material/colors';
 const Logo = () => {
   return (
     <Box sx={flexCenter}>
