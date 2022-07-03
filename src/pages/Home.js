@@ -2,7 +2,6 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Header from 'components/Header/Header';
 import OptionsTab from 'components/OptionsTab/OptionsTab';
-import Container from '@mui/material/Container';
 import LocationCards from 'components/LocationsCards/LocationCards';
 import Footer from 'components/Footer/Footer';
 import FooterMenu from 'components/Footer/FooterMenu';
@@ -28,26 +27,23 @@ const Home = () => {
           flexDirection: 'column',
           flexGrow: 1,
           height: 100,
-          overflowY: 'scroll',
         }}
       >
-        <Container maxWidth="xl" sx={{ mb: 3 }}>
-          <LocationCards />
-          <Box
-            sx={{
-              display: { xs: 'flex', md: 'none' },
-            }}
-          >
-            <MobileFooter />
-          </Box>
-        </Container>
+        <LocationCards />
+        <Box
+          sx={{
+            display: { xs: 'flex', md: 'none' },
+          }}
+        >
+          <MobileFooter />
+        </Box>
       </Box>
-      <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+      {/* <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
         <FooterMenu />
       </Box>
       <Box sx={displayOnDesktop}>
         <Footer />
-      </Box>
+      </Box> */}
     </Box>
   );
 };

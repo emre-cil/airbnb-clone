@@ -48,7 +48,6 @@ const ChoiceText = styled.div`
   padding: 0 1rem;
   font-size: 14px;
   padding-right: ${(props) => props.id === 3 && '11px'};
-  font-weight: ${(props) => (props.id === 3 ? 'normal' : `bold`)};
   color: ${(props) => (props.id === 3 ? '#717171' : '#222222')};
 `;
 const Divider = styled.span`
