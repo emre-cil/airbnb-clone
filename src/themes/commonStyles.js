@@ -55,13 +55,6 @@ export const carouselDot = {
   minWidth: 'auto',
 };
 
-export const fixedIcon = {
-  position: 'absolute',
-  right: 10,
-  top: 10,
-  zIndex: 10,
-};
-
 export const carouselImage = {
   height: 275,
   display: 'block',

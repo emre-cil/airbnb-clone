@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import styled from 'styled-components';
 // mui icons
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
@@ -17,11 +17,9 @@ import {
   flexBetween,
   dFlex,
   carouselDot,
-  fixedIcon,
   carouselImage,
   fixedBottom,
 } from 'themes/commonStyles';
-import './CarouselCard.css';
 
 const CarouselCard = ({ location }) => {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -40,16 +38,8 @@ const CarouselCard = ({ location }) => {
     setActiveStep(step); // handle swipe change
   };
   return (
-    <Box
-      className="carouselCard"
-      sx={{
-        flexGrow: 1,
-        position: 'relative',
-      }}
-    >
-      <Box sx={fixedIcon}>
-        <FaRegHeart size={24} color="#fff" />
-      </Box>
+    <Wrapper>
+      <FaRegHeart className="heartIcon" size={24} color="#fff" />
 
       {location.locationImages.length && (
         <SwipeableViews
@@ -80,24 +70,23 @@ const CarouselCard = ({ location }) => {
           position="static"
           activeStep={activeStep}
           nextButton={
-            <Button
-              size="small"
-              sx={carouselDot}
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              <KeyboardArrowRight />
-            </Button>
+            activeStep !== maxSteps - 1 && (
+              <Button
+                size="small"
+                sx={carouselDot}
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}
+              >
+                <KeyboardArrowRight />
+              </Button>
+            )
           }
           backButton={
-            <Button
-              size="small"
-              sx={carouselDot}
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              <KeyboardArrowLeft />
-            </Button>
+            activeStep !== 0 && (
+              <Button size="small" sx={carouselDot} onClick={handleBack}>
+                <KeyboardArrowLeft />
+              </Button>
+            )
           }
         />
       </Box>
@@ -124,8 +113,30 @@ const CarouselCard = ({ location }) => {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </Wrapper>
   );
 };
+const Wrapper = styled.div`
+  position: relative;
+  flex-grow: 1;
+  .MuiMobileStepper-root {
+    opacity: 0;
+    transition: all ease 1000ms;
+  }
 
+  .MuiMobileStepper-root {
+    opacity: 1;
+  }
+
+  .MuiMobileStepper-dotActive {
+    background-color: #fff;
+  }
+
+  .heartIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+  }
+`;
 export default CarouselCard;
