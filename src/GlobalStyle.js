@@ -22,21 +22,6 @@ export const GlobalStyle = createGlobalStyle`${css`
   }
   body {
     margin: 0;
-    padding: 0 5rem;
-    @media screen and (max-width: 1327px) {
-      padding: 0 5rem;
-    }
-    @media screen and (max-width: 1127px) {
-      padding: 0 2.5rem;
-    }
-    @media screen and (max-width: 743px) {
-      padding: 0 1.5rem;
-    }
-    //todo: add media queries for mobile
-    /* @media screen and (min-width: 161px) {
-      margin: 0 1vh;
-      background-color: red;
-    } */
 
     h1 {
       font-size: 2rem;

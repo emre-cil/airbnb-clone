@@ -31,9 +31,21 @@ const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media screen and (min-width: 744px) {
-    border-bottom: 1px solid var(--medGrey);
-    padding: 14px 0 18px;
+  border-bottom: 1px solid #ebebeb;
+
+  @media screen and (min-width: 1761px) {
+    padding: 14px calc(calc(100% - 1760px) / 2 + 5rem) 18px;
+  }
+
+  @media screen and (max-width: 1760px) {
+    padding: 14px 5rem 18px;
+  }
+  @media screen and (max-width: 1127px) {
+    padding: 14px 2.5rem 18px;
+  }
+  @media screen and (max-width: 743px) {
+    padding: 14px 1.5rem 18px;
+    border: none;
   }
 `;
 export default Header;
