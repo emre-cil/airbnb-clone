@@ -46,6 +46,7 @@ const Wrapper = styled.header`
   @media screen and (max-width: 743px) {
     padding: 14px 1.5rem 18px;
     border: none;
+    justify-content: center;
   }
 `;
 export default Header;
